@@ -262,7 +262,7 @@ timePie.prototype.dataInit = function(){
   for (let j = 0; j < 7; j++) {
     let newItem = []
     for (let i = 0; i < 24; i++) {
-      newItem.push(Math.random() * 100)
+      newItem.push((Math.random() * 100).toFixed(0))
     }
     this.timeMap.push(newItem)
   }

@@ -2,7 +2,7 @@
 
 ![效果图](./static/demo.png)
 
-[codePen]()
+[codePen](https://codepen.io/yukinotech/pen/eYOEJGy)查看动态效果
 ## 快速开始
 html中导入
 ```html
