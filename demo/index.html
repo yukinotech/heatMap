@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #timePie {
+        height: 450px;
+        width:450px;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <script src="./hotMap.js"></script>
+  </head>
+  <body>
+    <div>
+      <canvas id="timePie"></canvas>
+    </div>
+
+    <script>
+    let canvas = document.getElementById('timePie')
+    let options = {
+      // week: [ '周日', '周六', '周五', '周四', '周三', '周二', '周一' ],
+      hours :[
+        '6am','7am', '8am', '9am','10am','11am','12am', 
+        '1pm', '2pm', '3pm', '4pm', '5pm',
+        '6pm', '7pm', '8pm', '9pm', '10pm', '11pm','12pm', 
+        '1am', '2am', '3am', '4am', '5am', 
+      ],
+      card:{
+        title:'订单数',
+        inner(v,week,hour){
+          return `${week} ${hour}:${v.toFixed(0)}`
+        },
+        // isShowColorSpan:false
+      },
+      judgeColorfunction(value) {
+      if (value > 75) {
+        return 'rgb(1,94,176)'
+      } else if (value <= 75 && value > 50) {
+        return 'rgb(51,160,236)'
+      } else if (value <= 50 && value > 25) {
+        return 'rgb(96,183,293)'
+      } else if (value <= 25 && value >= 0) {
+        return 'rgb(159,214,244)'
+        // return 'hsl(201,79%,79%)'
+      }
+    },
+      radius:150,
+      lineWidth:18,
+      layerWidth:20,
+      fontSize:20,
+      horizontalFontOffset:{
+        xOffset:0,
+        yOffset:3,
+      },
+      leftRoundFontOffset:{
+        xOffset:-1,
+        yOffset:3,
+      },
+      rightRoundFontOffset:{
+        xOffset:14,
+        yOffset:3,
+      }
+    }
+    
+    let timePieInst = new timePie(canvas,options)
+
+    
+    timePieInst.init()  
+    </script>
+  </body>
+</html>
