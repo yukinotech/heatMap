@@ -1,5 +1,8 @@
 # 扇形时间热力图
 
+![效果图](./static/demo.png)
+
+[codePen]()
 ## 快速开始
 html中导入
 ```html
